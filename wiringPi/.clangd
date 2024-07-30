@@ -1,0 +1,4 @@
+CompileFlags:
+  Add: 
+    - "-I1-include"
+    - "-I2-src"
