@@ -63,9 +63,9 @@ lib/spl/src/stm32f10x_spi.c \
 lib/spl/src/stm32f10x_tim.c \
 lib/spl/src/stm32f10x_usart.c \
 lib/spl/src/stm32f10x_wwdg.c \
-Delay.c \
+delay.c \
 OLED.c \
-src/Serialaa.c \
+src/serialRx32B.c \
 src/key.c \
 
 # C_INCLUDES 
