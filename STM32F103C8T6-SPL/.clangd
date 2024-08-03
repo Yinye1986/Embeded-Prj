@@ -1,9 +1,0 @@
-CompileFlags:
-  Add: 
-    - "-Iinc"
-    - "-Isrc"
-    - "-Ilib/CoreSupport"
-    - "-Ilib/spl/inc"
-    - "-Ilib/spl/src"
-
-
