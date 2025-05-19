@@ -1,5 +1,6 @@
-build/obj/misc.o: lib/spl/src/misc.c lib/spl/inc/misc.h stm32f10x.h \
- lib/CoreSupport/core_cm3.h system_stm32f10x.h stm32f10x_conf.h \
+build/obj/misc.o: lib/spl/src/misc.c lib/spl/inc/misc.h \
+ lib/start/stm32f10x.h lib/CoreSupport/core_cm3.h \
+ lib/start/system_stm32f10x.h lib/start/stm32f10x_conf.h \
  lib/spl/inc/stm32f10x_adc.h lib/spl/inc/stm32f10x_bkp.h \
  lib/spl/inc/stm32f10x_can.h lib/spl/inc/stm32f10x_cec.h \
  lib/spl/inc/stm32f10x_crc.h lib/spl/inc/stm32f10x_dac.h \
@@ -12,10 +13,10 @@ build/obj/misc.o: lib/spl/src/misc.c lib/spl/inc/misc.h stm32f10x.h \
  lib/spl/inc/stm32f10x_spi.h lib/spl/inc/stm32f10x_tim.h \
  lib/spl/inc/stm32f10x_usart.h lib/spl/inc/stm32f10x_wwdg.h
 lib/spl/inc/misc.h:
-stm32f10x.h:
+lib/start/stm32f10x.h:
 lib/CoreSupport/core_cm3.h:
-system_stm32f10x.h:
-stm32f10x_conf.h:
+lib/start/system_stm32f10x.h:
+lib/start/stm32f10x_conf.h:
 lib/spl/inc/stm32f10x_adc.h:
 lib/spl/inc/stm32f10x_bkp.h:
 lib/spl/inc/stm32f10x_can.h:

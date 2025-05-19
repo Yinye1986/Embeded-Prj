@@ -35,11 +35,11 @@ ASM_DEFS			=
 # C_SOURCES			= $(wildcard User/*.c)
 # C_SOURCES			= $(wildcard STM32F10x_LIB/periph/src/*.c)
 # $(foreach item,${C_SOURCES}, $(info $(item) \))
-ASM_SOURCES			= $(ROOTDIR)/lib/startup_stm32f10x_md.s
+ASM_SOURCES			= $(ROOTDIR)/lib/start/startup_stm32f10x_md.s
 C_SOURCES			= \
 main.c \
-stm32f10x_it.c \
-system_stm32f10x.c \
+lib/start/stm32f10x_it.c \
+lib/start/system_stm32f10x.c \
 lib/spl/src/misc.c \
 lib/spl/src/stm32f10x_adc.c \
 lib/spl/src/stm32f10x_bkp.c \
@@ -63,17 +63,17 @@ lib/spl/src/stm32f10x_spi.c \
 lib/spl/src/stm32f10x_tim.c \
 lib/spl/src/stm32f10x_usart.c \
 lib/spl/src/stm32f10x_wwdg.c \
-delay.c \
-OLED.c \
-src/serialRx32B.c \
+src/delay.c \
+src/OLED.c \
 src/key.c \
 
 # C_INCLUDES 
 C_INCLUDES 			= \
 -Ilib/CoreSupport \
 -Ilib/spl/inc \
+-Ilib/start \
 -Iinc \
--I./
+
 ASM_INCLUDES		=
 
 # CFLAGS
@@ -85,10 +85,10 @@ CFLAGS += -g -gdwarf-2	# -g 生成调试信息，	-gdwarf-2 指定调试信息�
 endif
 
 # LD FLAGS
-LDSCRIPT			= $(ROOTDIR)/lib/stm32_flash.ld
+LDSCRIPT			= $(ROOTDIR)/lib/start/stm32_flash.ld
 LIBDIR				= \
 -L$(CROSS_COMPILE_ROOT)/arm-none-eabi/lib \
--L$(CROSS_COMPILE_ROOT)/lib/gcc/arm-none-eabi/10.3.1/
+-L$(CROSS_COMPILE_ROOT)/lib/gcc/arm-none-eabi/14.2.0
 LIBS				= -lc -lm -lgcc
 LDFLAGS				= -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 
