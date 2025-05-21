@@ -64,8 +64,7 @@ lib/spl/src/stm32f10x_tim.c \
 lib/spl/src/stm32f10x_usart.c \
 lib/spl/src/stm32f10x_wwdg.c \
 src/delay.c \
-src/OLED.c \
-src/key.c \
+src/buzzer.c \
 
 # C_INCLUDES 
 C_INCLUDES 			= \
